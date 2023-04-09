@@ -1,0 +1,7 @@
+
+[{"ID":1,"Img":"assets\\shose.jpg","Name":"shose","Price":700,"Quantity":20,"discount":"0"},
+{"ID":2,"Img":"assets\\camera.jpg","Name":"camera3d","Price":100,"Quantity":30,"discount":"0"},
+{"ID":2,"Img":"assets\\lump.jpg","Name":"lumps","Price":200,"Quantity":40,"discount":"0"},
+{"ID":2,"Img":"assets\\glass.jpg","Name":"sunglass","Price":150,"Quantity":50 ,"discount":"15"},
+{"ID":2,"Img":"assets\\shose2.jpg","Name":"shosenike","Price":900,"Quantity":30,"discount":"15"}]
+

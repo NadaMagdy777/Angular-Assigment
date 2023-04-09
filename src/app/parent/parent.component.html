@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card me-3 mt-4" style="width: 18rem;" *ngFor="let Product of messageFromChild">
+          <img [src]="Product.Img" class="card-img-top img-fluid h-50 w-100"  alt="...">
+         
+          <div class="card-body">
+            
+                <h5 class="card-title">{{Product.Name}}</h5>
+    
+                <p class="card-text">{{Product.Price|currency:'EGP '}}</p>
+                <p class="text-muted">Quantity ({{Product.Quantity}})</p>
+    
+    
+                <a href="#" class="btn btn-success">Add to card </a>
+    
+          </div>
+        </div>
+    </div>
+</div>
+
+<app-child (childEvent)="messageFromChild=$event"></app-child>

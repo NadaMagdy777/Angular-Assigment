@@ -1,0 +1,16 @@
+<div class="row m-5">
+    <div class="card me-3 mt-4" style="width: 18rem;" *ngFor="let user of userList">
+      <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" class="card-img-top img-fluid h-50 w-100"  alt="...">
+      <div class="card-body">
+        
+        <h5 class="card-title">{{user.name}}</h5>
+
+        <p class="card-text">{{user.username}}</p>
+        <p class="text-muted">{{user.email}}</p>
+
+
+        <a href="#" class="btn btn-success">view profile </a>
+
+      </div>
+    </div>
+  </div>

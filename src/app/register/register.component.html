@@ -1,0 +1,41 @@
+<div class="d-flex align-item-center justify-content-center m-5">
+    <form #userForm="ngForm" novalidate (ngSubmit)="submitData()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" required pattern="^[A-Z|a-z]*$" [class.is-invalid]="name.invalid&&name.touched" [(ngModel)]="userModel.name" class="form-control" name="name" #name="ngModel" ngModel id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small class="text-danger" *ngIf="name.invalid&&name.touched">Please enter name  with alph only</small>
+
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required  [(ngModel)]="userModel.email" [class.is-invalid]="email.invalid&&email.touched" class="form-control" name="Email" ngModel #email="ngModel" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small class="text-danger" *ngIf="email.invalid&&email.touched">Please enter Correct Email</small>
+
+          <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" required [(ngModel)]="userModel.password" class="form-control" name="password" [class.is-invalid]="password.invalid&&password.touched" #password="ngModel" ngModel id="exampleInputPassword1">
+          <small class="text-danger"  *ngIf="password.invalid&&password.touched">password required</small>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">confirm Password</label>
+            <input type="password" required [(ngModel)]="userModel.confirm" class="form-control" name="confirmpassword" #confirm="ngModel" [class.is-invalid]="confirm.invalid&&confirm.touched&&userModel.confirm!==userModel.password" ngModel id="exampleInputPassword1">
+            <small class="text-danger" *ngIf="userModel.confirm !==userModel.password&&password.touched">Please confirm Password</small>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">where you hear about us</label>
+            <select class="form-select" [(ngModel)]="userModel.method" name="method" #method="ngModel">
+              <option></option>
+                <option *ngFor="let method of methods">
+                    {{method}}
+                </option>
+            </select>
+        </div>
+       
+        <button type="submit" *ngIf="userForm.form.invalid" [disabled]="userForm.form.invalid"   class="btn btn-danger">Register</button>
+        <button type="submit" *ngIf="userForm.form.valid" [disabled]="userForm.form.invalid"   class="btn btn-success">Register</button>
+    </form>
+</div>

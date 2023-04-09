@@ -1,0 +1,16 @@
+<div class="row m-5">
+    <div class="card me-3 mt-4" style="width: 18rem;" *ngFor="let post of postsList">
+      
+      <div class="card-body">
+        
+        <h5 class="card-title">{{post.id}}</h5>
+
+        <p class="card-text">{{post.title}}</p>
+        <p class="text-muted">{{post.body}}</p>
+
+
+        <a href="#" class="btn btn-success" (click)="ViewComments(post)">view post Comments </a>
+
+      </div>
+    </div>
+  </div>
